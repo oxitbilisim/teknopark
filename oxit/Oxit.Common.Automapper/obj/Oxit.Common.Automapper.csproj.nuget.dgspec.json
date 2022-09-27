@@ -1,0 +1,193 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj": {}
+  },
+  "projects": {
+    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
+        "projectName": "Oxit.Common.Automapper",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
+        "packagesPath": "/Users/hakan/.nuget/packages/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/hakan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj"
+              },
+              "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400-preview.22330.6/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj",
+        "projectName": "Oxit.Common.ViewModels",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj",
+        "packagesPath": "/Users/hakan/.nuget/packages/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/hakan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400-preview.22330.6/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
+        "projectName": "Oxit.Common.Models",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
+        "packagesPath": "/Users/hakan/.nuget/packages/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/hakan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400-preview.22330.6/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

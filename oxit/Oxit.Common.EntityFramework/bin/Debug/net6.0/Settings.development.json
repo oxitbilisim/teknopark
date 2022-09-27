@@ -1,0 +1,29 @@
+﻿{
+  "Database": {
+    "Type": "PostgreSql", //or MySql - Oracle - PostgreSql - MongoDb
+    "ConnectionString": "Host=185.122.203.197;Database=teknopark;Username=postgres;Password=oxit2016"
+
+  },
+  "Cache": {
+    "Enable": true,
+    "Type": "Redis", // or Database - MemCache
+    "ConnectionString": ""
+  },
+  "Mail": {
+    "Server": "",
+    "Username": "",
+    "Password": ""
+  },
+  "Log": {
+    "Enable": true,
+    "Destination": "Database", // or Disk or Mongo
+    "Level": "Info", //or Warning - Error
+    "ConnectionString": "mongodb://192.168.1.218:27017"
+  },
+  "JWT": {
+    "ValidAudience": "http://localhost:4200",
+    "ValidIssuer": "http://localhost:61955",
+    "Secret": "ByYM000OLlMQG6VVVp1OH7Xzyr7gHuw1qvUC5dcGt3SNM"
+  },
+  "TeknoparkConnectionstring": "Server=185.122.203.197;Database=AANKARATEKNOPARKAŞ_2022;User Id=sa;Password=Oxit2016;"
+}
