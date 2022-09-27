@@ -1,0 +1,213 @@
+﻿@using Oxit.Domain.Models
+@using Newtonsoft.Json
+@model Dictionary<string, object>
+@{
+  int aktifFirmaSayi = (int)Model["aktifFirmaSayi"];
+  double toplamBorc = (double)Model["toplamBorc"];
+  double toplamOdeme = (double)Model["toplamOdeme"];
+  double kalanAlacak = (double)Model["kalanAlacak"];
+  
+  List<HesapPlaniDto> gecikmesiOlanFirmalar = (List<HesapPlaniDto>)Model["gecikmesiOlanFirmalar"];
+  List<HesapPlaniDto> gecikmesiTahsilFirmalar = (List<HesapPlaniDto>)Model["gecikmesiTahsilFirmalar"];
+  
+  List<string> labels = (List<string>)Model["labels"];
+  List<Int32> alacak = (List<Int32>)Model["alacak"];
+  List<Int32> gecikme = (List<Int32>)Model["gecikme"];
+  List<Int32> borc = (List<Int32>)Model["borc"];
+    
+  ViewData["Title"] = "Teknopark Ankara ";
+}
+
+<div class="text-center">
+  <div class="row">
+    <div class="col-6 col-lg-3">
+      <div class="card overflow-hidden">
+        <div class="card-body p-0 d-flex align-items-center" style=" height: 150px; ">
+          <div class="bg-primary text-white py-4 px-5 me-3" style=" height: 150px; padding-top: 3.5rem !important; margin-right: 3rem !important;">
+            <svg class="icon icon-xl">
+              <use xlink:href="vendors/coreui/icons/svg/free.svg#cil-building"></use>
+            </svg>
+          </div>
+          <div>
+            <div class="fs-6 fw-semibold text-primary">@aktifFirmaSayi</div>
+            <div class="text-medium-emphasis text-uppercase fw-semibold small">Aktif Firma</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-->
+    <div class="col-6 col-lg-3">
+      <div class="card overflow-hidden">
+        <div class="card-body p-0 d-flex align-items-center" style=" height: 150px; ">
+          <div class="bg-info text-white py-4 px-5 me-3" style=" height: 150px; padding-top: 3.5rem !important; margin-right: 2.5rem !important;">
+            <svg class="icon icon-xl">
+              <use xlink:href="vendors/coreui/icons/svg/free.svg#cil-money"></use>
+            </svg>
+          </div>
+          <div>
+            <div class="fs-6 fw-semibold text-info">@String.Format("{0:n2}", toplamBorc ) ₺</div>
+            <div class="text-medium-emphasis text-uppercase fw-semibold small">Toplam Borç</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-->
+    <div class="col-6 col-lg-3">
+      <div class="card overflow-hidden">
+        <div class="card-body p-0 d-flex align-items-center" style=" height: 150px; ">
+          <div class="bg-warning text-white py-4 px-5 me-3" style=" height: 150px; padding-top: 3.5rem !important; margin-right: 2.5rem !important;">
+            <svg class="icon icon-xl">
+              <use xlink:href="vendors/coreui/icons/svg/free.svg#cil-money"></use>
+            </svg>
+          </div>
+          <div>
+            <div class="fs-6 fw-semibold text-warning">@String.Format("{0:n2}", toplamOdeme) ₺</div>
+            <div class="text-medium-emphasis text-uppercase fw-semibold small">Toplam Ödeme</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-->
+    <div class="col-6 col-lg-3">
+      <div class="card overflow-hidden">
+        <div class="card-body p-0 d-flex align-items-center" style=" height: 150px; ">
+          <div class="bg-danger text-white py-4 px-5 me-3" style=" height: 150px; padding-top: 3.5rem !important; margin-right: 2.5rem !important;">
+            <svg class="icon icon-xl">
+              <use xlink:href="vendors/coreui/icons/svg/free.svg#cil-money"></use>
+            </svg>
+          </div>
+          <div>
+            <div class="fs-6 fw-semibold text-danger">@String.Format("{0:n2}", kalanAlacak) ₺</div>
+            <div class="text-medium-emphasis text-uppercase fw-semibold small">Kalan Alacak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.col-->
+  </div>
+  
+  <!-- /.row-->
+  <div class="row">
+    <div class="col-12 mt-5">
+      <canvas id="myChart" height="300"></canvas>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 mt-5">
+      <div class="card">
+        <div class="card-header">
+          Gecikmesi Tahsil Edilen Firmalar
+        </div>
+                
+                
+        <div class="card-body">
+          <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+              <td>Kodu</td>
+              <td>Firma Adı</td>
+              <td>Gecikme Tutarı</td>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var f in gecikmesiTahsilFirmalar)
+            {
+              <tr>
+                <td>@Html.DisplayFor(m => f.Kod)</td>
+                <td>@Html.DisplayFor(m => f.Ad)</td>
+                <td>@Html.DisplayFor(m => f.GecikmeTutari) ₺</td>
+                <td style="text-align: center;">
+                  <a class="btn btn-sm btn-danger" href="@Url.Action("index","Cari",new {hesapId=f.Id})">
+                    Detay
+                    <i class="fa fa-search"></i>
+                  </a>
+                </td>
+              </tr>
+            }
+            </tbody>
+  
+          </table>
+        </div>
+                
+      </div>
+    </div>
+        <div class="col-6 mt-5">
+                  <div class="card">
+                    <div class="card-header">
+                      Gecikmesi Olan Firmalar
+                    </div>
+                    
+                    
+                    <div class="card-body">
+                      <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                          <td>Kodu</td>
+                          <td>Firma Adı</td>
+                          <td>Gecikme Tutarı</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var f in gecikmesiOlanFirmalar)
+                        {
+                          <tr>
+                            <td>@Html.DisplayFor(m => f.Kod)</td>
+                            <td>@Html.DisplayFor(m => f.Ad)</td>
+                            <td>@Html.DisplayFor(m => f.GecikmeTutari) ₺</td>
+                            <td style="text-align: center;">
+                              <a class="btn btn-sm btn-danger" href="@Url.Action("index","Cari",new {hesapId=f.Id})">
+                                Detay
+                                <i class="fa fa-search"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        }
+                        </tbody>
+      
+                      </table>
+                    </div>
+                    
+                  </div>
+              </div>
+      </div>
+  <img class="sidebar-brand-full mt-5" src="assets/img/teknopark-ankara-black.png" width="300" alt="Teknopark Ankara"/>
+  <script src="vendors/chart.js/js/chart.min.js"></script>
+  <script src="vendors/coreui/chartjs/js/coreui-chartjs.js"></script>
+  <script src="js/charts.js"></script>
+  <script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: @Html.Raw(JsonConvert.SerializeObject(labels)), //['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Borç',
+          backgroundColor: 'rgba(220, 220, 220, 0.9)',
+          borderColor: 'rgba(220, 220, 220, 0.8)',
+          highlightFill: 'rgba(220, 220, 220, 0.75)',
+          highlightStroke: 'rgba(220, 220, 220, 1)',
+          data: @Html.Raw(JsonConvert.SerializeObject(borc)) //[random(), random(), random(), random(), random(), random(), random()]
+        },{
+           label: 'Gecikme',
+           backgroundColor: 'rgb(229,83,83,0.5)',
+           borderColor: 'rgba(220, 220, 220, 0.8)',
+           highlightFill: 'rgba(220, 220, 220, 0.75)',
+           highlightStroke: 'rgba(220, 220, 220, 1)',
+           data: @Html.Raw(JsonConvert.SerializeObject(gecikme)) //[random(), random(), random(), random(), random(), random(), random()]
+          },
+          {
+            label: 'Alacak',
+            backgroundColor: 'rgba(151, 187, 205, 0.5)',
+            borderColor: 'rgba(151, 187, 205, 0.8)',
+            highlightFill: 'rgba(151, 187, 205, 0.75)',
+            highlightStroke: 'rgba(151, 187, 205, 1)',
+            data: @Html.Raw(JsonConvert.SerializeObject(alacak)) //[random(), random(), random(), random(), random(), random(), random()]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      }
+    });
+  </script>
+</div>

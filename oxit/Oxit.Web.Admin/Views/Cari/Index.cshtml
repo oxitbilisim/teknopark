@@ -1,0 +1,320 @@
+﻿@using Oxit.Domain.Models
+@model Dictionary<string, object>
+@{
+
+    HesapPlani hesapPlani = (HesapPlani)Model["hesapPlani"];
+    List<Fis> fisList = (List<Fis>)Model["fisList"];
+    int pageCount = (int)Model["pageCount"];
+    int page = (int)Model["page"];
+    int alacakIdd = 0;
+    double totalBorc = 0.00;
+    double totalBakiye = 0.00;
+    string Fistur = "";
+
+    double totalAlacak = 0.00;
+    double totalGecikmeTutari = 0.00;
+    double totalOdenenGecikmeTutari = 0.00;
+    double totalkalanGecikmeTutari = 0.00;
+
+    ViewData["Title"] = "Şirketler | "+hesapPlani.Ad;
+}
+<div class="callout @(hesapPlani.Aktif ? "callout-success" : "callout-danger")  bg-white" style="border-left-width: 8px;">
+    <h4>@hesapPlani.Ad</h4>
+</div>
+
+
+<div class="card text-center">
+    <div class="card-header non-printable">
+        @* <button class="btn btn-sm btn-light" type="button" id="gecikmeBorcHesapla" onclick="gecikmeBorcHesapla()">Borç Tutarı Gecikme Hesapla</button> *@
+        @* <button class="btn btn-sm btn-success" type="button" id="gecikmeHesapla" onclick="gecikmeHesapla()">Gecikme Hesapla</button> *@
+        @*  <button class="btn btn-sm btn-danger" type="button" id="gecikmeHesapla" onclick="gecikmeleriSifirla()">Gecikmeleri Sıfırla</button> *@
+        @* <a class="btn btn-sm btn-info" href="@Url.Action("Edit","Cari",new {hesapId = hesapPlani.Id ,page = page})">Düzenle</a> *@
+        @* <a class="btn btn-sm btn-warning" href="@Url.Action("Index","Companies")">Geri Dön</a> *@
+        <button class="btn btn-sm btn-info float-end" type="button" onclick="window.print();">Yazdır</button>
+        <a class="btn btn-sm btn-warning float-end me-1 ms-1" href="@Url.Action("DownloadExcel","Cari",new {hesapId = hesapPlani.Id })">Excel İndir</a>
+    </div>
+  <div class="card-body">
+      <table class="table table-striped table-hover printable">
+          <thead>
+          <tr>
+              <th scope="col" style="width: 70px;">Tür</th>
+              
+              <th scope="col" style="width: 70px;">Tarih</th>
+              <th scope="col" style="width: 70px;">Borç</th>
+              <th scope="col" style="width: 70px;">Alacak</th>
+                <th scope="col" style="width: 70px;">Ek Aciklama</th>
+              <th scope="col" style="width: 70px;">Gecikme T.</th>
+              <th scope="col" style="width: 70px;">Gecikme Gn</th>
+              @* <th scope="col">Açıklama</th> *@
+              <th scope="col" style="width: 80px;">Hesap Tarihi</th>
+              <th scope="col" style="width: 80px;">Ödn Borc Tutar</th>
+              <th scope="col" style="width: 80px;">Kalan Borc Tutar</th>
+              <th scope="col" style="width: 80px;">Odn Geckm Tutar</th>
+              <th scope="col" style="width: 80px;">Kalan Gecikme Tutar</th>
+              <th scope="col" style="width: 80px;">Kalan Alck Tutar</th>
+          
+
+          </tr>
+          </thead>
+          <tbody>
+          @foreach (var f in fisList)
+          {
+              totalBorc = (f.Borc != null && f.FisTur != "6") ? totalBorc + (double)f.Borc : totalBorc;
+              totalAlacak = f.Alacak != null ? totalAlacak + (double)f.Alacak : totalAlacak;
+              totalGecikmeTutari = f.GecikmeTutari != null ? totalGecikmeTutari + (double)f.GecikmeTutari : totalGecikmeTutari;
+              totalOdenenGecikmeTutari = f.OdenenGecikmeTutar != null ? totalOdenenGecikmeTutari + (double)f.OdenenGecikmeTutar : totalOdenenGecikmeTutari;
+              totalkalanGecikmeTutari = f.KalanGecikmeTutar != null ? totalkalanGecikmeTutari + (double)f.KalanGecikmeTutar : totalkalanGecikmeTutari;
+
+              string selectedClass = "";
+              if (!f.Odendi && f.GecikmeTutari< 0)
+              {
+                  selectedClass = "white";
+              }
+              else if (f.Borc> 0 )
+              {
+                  selectedClass = "#3399FF";
+                  Fistur = "Borç";
+                  
+                  if (f.FisTur == "0")
+                      Fistur = "Açılış ";
+                  if (f.FisTur == "6")
+                  {
+                      Fistur = " Bakiye ";
+                      selectedClass = "#97BFE8";
+                  }
+                  if (f.FisTur == "9")
+                  {
+                      Fistur = " Gecikme Ft. ";
+                      selectedClass = "#CA5CDD";
+                  }
+              }else  if (f.Alacak> 0)
+              {
+                  selectedClass = "#00CC00";
+                  Fistur = "Alacak ";
+              }
+              else if (f.GecikmeTutari> 0 )
+              {
+                  selectedClass = "FF9900";
+                  Fistur = "Gecikme ";
+                  
+
+                  
+                  if (f.FisTur == "7") 
+                  {
+                      Fistur = "Gck - Bakiye ";
+                      selectedClass = "#FFA000";
+                  }   
+                  if (f.Odendi)
+                  {
+                     
+                      selectedClass = "#FFC56D";
+                  }
+                      
+
+              }
+              <tr bgcolor="@selectedClass">
+                  <td>@(Fistur)</td>
+                  <td>@Convert.ToDateTime(f.Tarih).ToString("dd.MM.yyyy")</td>
+                  <td>@Convert.ToDouble(f.Borc).ToString("n2")@(f.Borc != null ? " ₺ " : "")</td>
+                  <td>@Convert.ToDouble(f.Alacak).ToString("n2")@(f.Alacak != null ? " ₺ " : "")</td>
+                  <td>@f.EkAciklama</td>
+                  <td>@Convert.ToDouble(f.GecikmeTutari).ToString("n2")@(f.GecikmeTutari != null ? " ₺ " : "")</td>
+                  <td>@Html.DisplayFor(m => f.GecikmeGunu)</td>
+                  <td>
+                      @if (f.SonHesaplananGecikmeTarihi != null)
+                      {
+                          @Convert.ToDateTime(f.SonHesaplananGecikmeTarihi).ToString("dd.MM.yyyy")
+                      }
+                  </td>
+                  <td>@Convert.ToDouble(f.OdenenBorcTutar).ToString("n2")@(f.OdenenBorcTutar != null ? " ₺ " : "")</td>
+                  <td>@Convert.ToDouble(f.KalanBorcTutar).ToString("n2")@(f.KalanBorcTutar != null ? " ₺ " : "")</td>
+                  <td>@Convert.ToDouble(f.OdenenGecikmeTutar).ToString("n2")@(f.OdenenGecikmeTutar != null ? " ₺ " : "")</td>
+                  <td>@Convert.ToDouble(f.KalanGecikmeTutar).ToString("n2")@(f.KalanGecikmeTutar != null ? " ₺ " : "")</td>
+                  <td>@Convert.ToDouble(f.KalanAlacakTutar).ToString("n2")@(f.KalanAlacakTutar != null ? " ₺ " : "")</td>
+                  <td>
+                       @if (f.Alacak > 0)
+                                            {
+                                                <a data-toggle="modal" data-target="#partialModal" title="delete"
+                                                   class="btn btn-danger btn-xs" onclick="Func_LoadPv(@f.Id)">Detay</a>
+                                            }
+                      
+                  </td>
+              </tr>
+              totalBakiye = totalBorc - totalAlacak;
+
+          }
+          
+          </tbody>
+     
+      </table>
+  <div id="partialModal" class="modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog"  role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  
+                      <h5 class="modal-title">Alacak Borc Ödeme Form</h5>
+        
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+                          <button type="button" class="btn btn-info" id="closbtn" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <br/>
+      
+     
+      <table style="background-color: lightblue;width:80%">
+                 
+                        <tr>
+                            <td style="padding: 10px"> Borç</td>
+                            <td style="padding: 10px"> Alacak </td>
+                            <td style="padding: 10px"> Bakiye</td>
+                            <td style="padding: 10px"> Gecikme</td>
+                            <td style="padding: 10px">Ödenen Gecikme</td>
+                            <td style="padding: 10px">Kalan Gecikme</td>
+                        </tr>
+                        <tr>
+                         
+                            <td style="padding: 10px">@totalBorc.ToString("n2")@(totalBorc != null ? " ₺ " : "")</td>
+                           
+                            <td style="padding: 10px">@totalAlacak.ToString("n2")@(totalAlacak != null ? " ₺ " : "")</td>
+                            <td style="padding: 10px">@totalBakiye.ToString("n2")@(totalBakiye != null ? " ₺ " : "")</td>
+                            
+                            <td style="padding: 10px">@totalGecikmeTutari.ToString("n2")@(totalGecikmeTutari != null ? " ₺ " : "")</td>
+                            <td style="padding: 10px">@totalOdenenGecikmeTutari.ToString("n2")@(totalOdenenGecikmeTutari != null ? " ₺ " : "")</td>
+                            <td style="padding: 10px">@totalkalanGecikmeTutari.ToString("n2")@(totalkalanGecikmeTutari != null ? " ₺ " : "")</td>
+                            </tr>
+          
+                    </table>
+      
+  </div>
+</div>
+
+
+<nav aria-label="Page navigation example non-printable">
+    <ul class="pagination non-printable">
+        @if (page>1)
+        {
+            <li class="page-item non-printable"><a class="page-link" href="@Url.Action("Index","Cari",new {hesapId = hesapPlani.Id ,page = page-1})" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+        }
+        
+        @for (int i = 1; i<=pageCount;i++)
+        {
+            <li class="page-item non-printable"><a class="page-link" href="@Url.Action("Index","Cari",new {hesapId = hesapPlani.Id ,page = i})">@i</a></li>
+        }
+        
+        @if (page < pageCount)
+        {
+            <li class="page-item non-printable"><a class="page-link" href="@Url.Action("Index","Cari",new {hesapId = hesapPlani.Id ,page = page+1})" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+        }
+    </ul>
+</nav>
+
+<script>
+function gecikmeHesapla(){
+    $.ajax({
+                 type: "get",
+                 url: "@Url.Action("GecikmeleriHesapla","GecikmeHesapla", new {hesapKodu = hesapPlani.Kod})",
+                 dataType:"json",
+                 success: function(response){
+                     window.location.reload();
+                 },
+                 error: function(jqXHR){
+                     if (jqXHR.status != 200) {
+                         alert("Geçikmeler hesaplanamdı!");
+                     }else{
+                         window.location.reload();
+                     }
+                 }
+        });
+}
+
+
+
+  $("#closbtn").click(function () {  
+
+            $('#partialModal').modal('hide');  
+        });        
+    function gecikmeBorcHesapla() {
+        $.ajax({
+            type: "get",
+            url: "@Url.Action("AlacaksizGecikmeHesapla", "GecikmeHesapla", new {hesapKodu = hesapPlani.Kod})",
+            dataType: "json",
+            success: function (response) {
+                window.location.reload();
+            },
+            error: function (jqXHR) {
+                if (jqXHR.status != 200) {
+                    alert("Geçikmeler hesaplanamdı!");
+                } else {
+                    window.location.reload();
+                }
+            }
+        });
+    }
+    
+    $("partialModal").on('hide.bs.modal', function(){
+    	alert('asd');
+ 
+    });
+              
+       function Func_LoadPv(_alacakliId) {
+   
+    //  $.ajax({
+    //                     type: "GET",
+    //                     url: "/Cari/detailData",
+    //                     data: '{alacakId: "' + alacakIdd + '" }',
+    //                     contentType: "application/json; charset=utf-8",
+    //                     dataType: "html",
+    //                     success: function (response) {
+    //                         alert(response);
+    //                         $("#partialModal").find(".modal-body").html(response);
+    //                         $("#partialModal").modal('show');
+    //                     },
+    //                     failure: function (response) {
+    //                         alert(response.responseText);
+    //                     },
+    //                     error: function (response) {
+    //                         alert(response.responseText);
+    //                     }
+    //                 });
+    //       
+    // // alert(_alacakliId);
+    alacakIdd = _alacakliId;
+        $.ajax({
+
+                   type: "get",
+                             url: "@Url.Action("detailData","Cari")",
+                             dataType: "html",
+                              contentType: "application/json; charset=utf-8",
+                               data: { alacakId: alacakIdd },
+                               success: function (response) {
+                                                           $("#partialModal").find(".modal-body").html(response);
+                                                           $("#partialModal").modal('show');
+                                                       }
+
+            
+           });
+            }
+    function gecikmeleriSifirla() {
+        $.ajax({
+            type: "get",
+            url: "@Url.Action("GecikmeleriSifirla","GecikmeHesapla", new {hesapKodu = hesapPlani.Kod})",
+            dataType: "json",
+            success: function (response) {
+                window.location.reload();
+            },
+            error: function (jqXHR) {
+                if (jqXHR.status != 200) {
+                    alert("Geçikmeler sıfırlanamadı!");
+                } else {
+                    window.location.reload();
+                }
+            }
+        });
+    }
+
+</script>
