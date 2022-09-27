@@ -7843,11 +7843,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
+      "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
       "projectName": "Oxit.API.Shared",
-      "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
+      "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
       "packagesPath": "/Users/hakan/.nuget/packages/",
-      "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/obj/",
+      "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -7865,8 +7865,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
-              "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj"
+            "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
+              "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj"
             }
           }
         }

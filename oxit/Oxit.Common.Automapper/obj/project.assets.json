@@ -733,11 +733,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
+      "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
       "projectName": "Oxit.Common.Automapper",
-      "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
+      "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
       "packagesPath": "/Users/hakan/.nuget/packages/",
-      "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/obj/",
+      "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Automapper/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -755,11 +755,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj": {
-              "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj"
+            "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj": {
+              "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.DTOs/Oxit.Common.ViewModels.csproj"
             },
-            "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
-              "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj"
+            "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
+              "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj"
             }
           }
         }

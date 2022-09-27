@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "312JTEt0V3YLODK+Ys5qG/2qCq7EFedZm9DgsxMDL8SE52EecIbulF3Dlxu7Z5Frbk7DlEFOGGxylMghr11mdg==",
+  "dgSpecHash": "1vXnnIF4ENXB+SGzSJdgONlZIj4IDAcarmtEbEc0XQCxWrmbZroZUTXs+Ip2GCKgh31BTtbuCEZrRAhjlJRR2g==",
   "success": true,
-  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
+  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
   "expectedPackageFiles": [
     "/Users/hakan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/hakan/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",

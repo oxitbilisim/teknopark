@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj": {}
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj": {}
   },
   "projects": {
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj": {
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
         "projectName": "Oxit.API.Shared",
-        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/Oxit.API.Shared.csproj",
         "packagesPath": "/Users/hakan/.nuget/packages/",
-        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.API.Shared/obj/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.API.Shared/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -29,8 +29,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
-                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj"
+              "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj",
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj",
         "projectName": "Oxit.Common.Domain",
-        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/Oxit.Common.Domain.csproj",
         "packagesPath": "/Users/hakan/.nuget/packages/",
-        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Domain/obj/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -99,8 +99,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj": {
-                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj"
+              "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj"
               }
             }
           }
@@ -140,14 +140,14 @@
         }
       }
     },
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj": {
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
         "projectName": "Oxit.Common.DataAccess",
-        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
         "packagesPath": "/Users/hakan/.nuget/packages/",
-        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/obj/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -165,11 +165,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
-                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj"
+              "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj"
               },
-              "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/Oxit.Core.csproj": {
-                "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/Oxit.Core.csproj"
+              "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/Oxit.Core.csproj": {
+                "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/Oxit.Core.csproj"
               }
             }
           }
@@ -225,14 +225,14 @@
         }
       }
     },
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
         "projectName": "Oxit.Common.Models",
-        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/Oxit.Common.Models.csproj",
         "packagesPath": "/Users/hakan/.nuget/packages/",
-        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Models/obj/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Models/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -281,14 +281,14 @@
         }
       }
     },
-    "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/Oxit.Core.csproj": {
+    "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/Oxit.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/Oxit.Core.csproj",
+        "projectUniqueName": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/Oxit.Core.csproj",
         "projectName": "Oxit.Core",
-        "projectPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/Oxit.Core.csproj",
+        "projectPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/Oxit.Core.csproj",
         "packagesPath": "/Users/hakan/.nuget/packages/",
-        "outputPath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Core/obj/",
+        "outputPath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Core/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

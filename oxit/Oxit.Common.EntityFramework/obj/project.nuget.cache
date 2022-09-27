@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ImcZFZ+/uFWeUM+lo+IEKOj+IfMsI9tijRnZ1ZKcKI4FtRIJBMMZMji9Zg5k5IVCifz8yznlJOt7NtMh+/KSGQ==",
+  "dgSpecHash": "EqB6aubyUwqUxyYNPlcxZ88spP4PIm8F0I5YtTc3Gj+MnV7E9+WnNEkukPWR5hKPrDLBsTGjmRudDQvY6rXRpA==",
   "success": true,
-  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
+  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.EntityFramework/Oxit.Common.DataAccess.csproj",
   "expectedPackageFiles": [
     "/Users/hakan/.nuget/packages/castle.core/4.4.1/castle.core.4.4.1.nupkg.sha512",
     "/Users/hakan/.nuget/packages/exceldatareader/3.6.0/exceldatareader.3.6.0.nupkg.sha512",

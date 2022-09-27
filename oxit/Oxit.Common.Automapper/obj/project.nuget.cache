@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JFZ7jzi5o5Kdap1q0/K7/43ZMP5x6UUVDTpbVfQS1Ey0BXcmkCIqqQCtSDQev9ee7vO0o4mWvu87bFHQElu/wg==",
+  "dgSpecHash": "nfH3Z6TEGX+znwNc8sb4Yz5ReTfHuqT4OkMc3PaTNQsMOB0iYsweFpUPzxqVbguJx53hGrjV/LZBPSX9yTh1iQ==",
   "success": true,
-  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
+  "projectFilePath": "/Users/hakan/Documents/GitHub/oxit2/oxit/Oxit.Common.Automapper/Oxit.Common.Automapper.csproj",
   "expectedPackageFiles": [
     "/Users/hakan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/Users/hakan/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

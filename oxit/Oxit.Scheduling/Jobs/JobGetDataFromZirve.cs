@@ -33,8 +33,8 @@ namespace Oxit.Scheduling.Jobs
         {
             //cari
             fisAktarilansonTarih = appDbContext.Fis?.OrderBy(x => x.Tarih).LastOrDefault()?.Tarih; 
-            foreach (var cari in teknoparkContext.Hesplans.Where(c => c.Kod.StartsWith("120 D019")).ToList())
-            //foreach (var cari in teknoparkContext.Hesplans.Where(c => c.Kod.StartsWith("120 ")).ToList())
+            //foreach (var cari in teknoparkContext.Hesplans.Where(c => c.Kod.StartsWith("120 D019")).ToList())
+            foreach (var cari in teknoparkContext.Hesplans.Where(c => c.Kod.StartsWith("120 ")).ToList())
             
             {
                 if (!appDbContext.HesapPlani.Any(c => c.DbKey == cari.Kod))
